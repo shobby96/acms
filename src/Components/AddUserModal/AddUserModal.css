@@ -1,0 +1,57 @@
+.add-user-modal {
+  width: 46.87% !important;
+}
+
+.add-user-modal > .ant-modal-content {
+  background-color: #00E38C
+}
+
+#add-user-form {
+  display: grid;
+  place-items: center;
+}
+
+.add-user-form-item {
+  width: 80%;
+  margin-bottom: 0px !important;
+  font-size: 16px !important;
+  color: white;
+}
+
+.user-email-input {
+  margin-top: 82px;
+  border: 0px !important;
+  border-radius: 9px;
+}
+
+
+#email-input{
+    background: transparent;
+    background-color: rgba(255, 255, 255, 0.09) !important;
+    border: 2px;
+}
+.user-email-input label {
+  font-family: "Muli";
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+
+#add-user-modal-header-text {
+  font-family: "Muli";
+  font-weight: "bolder";
+  font-size: 42px;
+  color: white;
+}
+
+#add-user-button {
+  font-family: "Muli";
+  font-weight: bold;
+  color: black;
+  margin-top: 38px;
+}
+
+#add-user-instructions-text {
+  font-family: "Muli";
+  color: white;
+}

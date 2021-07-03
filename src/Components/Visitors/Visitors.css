@@ -1,0 +1,138 @@
+/* Content section of the dashboard dedicated for Visitors menu */
+#visitors-section-div {
+  flex-grow: 1;
+}
+
+/* Style for title of the content section */
+#visitors-title-div {
+  font-family: "Muli";
+  font-weight: bold;
+  font-size: 0.9375rem;
+}
+
+/* Container containing details of Visitor*/
+.visitors-data-row-container-div {
+  background: var(--data-background-color);
+  box-sizing: border-box;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+#visitors-data-row-div {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  
+}
+
+/* Single column of data row */
+.visitors-data-column-div {
+  align-self: center;
+  text-align: center;
+  flex-basis: 0;
+  padding: 0.25em;
+}
+
+/* First column containing Visitor avatar and name */
+.visitors-name-column-div {
+  flex-grow: 1;
+  flex-basis: clamp(264px, 23.229vw, 446px);
+}
+
+.visitors-avatar-with-name-container-div {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  grid-column: 3 / 4;
+  
+}
+.visitors-avatar-username-text {
+  padding-left: 0.5em;
+  font-family: "Muli";
+  color: var(--navbar-avatar-color-in-data);
+  font-weight: 800;
+  font-size: 0.9375rem;
+}
+
+/* Second Column which is a flex item and grid which has details of invite */
+.visitors-invite-details-column-div {
+  min-width: min(326px);
+  flex-basis: 41.51%;
+  flex-grow: 1;
+}
+
+#visitors-invitee-details-container {
+  display: grid;
+  grid-template-columns: fit-content(300px) fit-content(300px) 3fr;
+  text-align: initial;
+  column-gap: 1em;
+}
+
+/* Styles for invite details in the second column*/
+
+/* .visitors-invite-to-text {
+  font-family: "Muli";
+  font-weight: bold;
+  font-size: 1.07rem;
+} */
+
+#visitors-invitees-num-text {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  font-size: 0.9375rem;
+  font-family: "Muli";
+  color: var(--font-color-secondary);
+}
+
+.visitors-date-time-text {
+  display: flex;
+  font-family: "Muli";
+  font-size: 0.798rem;
+  font-weight: bold;
+  grid-row: 1/3;
+  grid-column: 3/4;
+  justify-content: center;
+  align-items: center;
+  color: var(--font-color-secondary);
+}
+
+#visitors-invitees-visit-purpose-text {
+  font-size: 0.9375rem;
+  font-family: "Muli";
+  color: var(--font-color-secondary);
+}
+
+#visitors-invite-to-text {
+  color: #00e18a;
+  font-family: "Muli";
+  font-size: calc(14px + (23 - 14) * ((100vw - 300px) / (1920 - 300)));
+  font-weight: bold;
+}
+
+/* Third Column containing buttons for accepting or rejecting requests*/
+.visitors-action-buttons-column-div {
+  flex-basis: 25% !important ;
+}
+.visitors-action-button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Styles for action buttons in the container */
+.visitors-accept-button {
+  background-color: #00e38c;
+  color: white;
+  height: initial;
+  font-family: "Muli";
+  font-weight: bold;
+  font-size: 1.07rem;
+}
+
+.visitors-reject-button {
+  background-color: #e30000;
+  color: white;
+  height: initial;
+  font-family: "Muli";
+  font-weight: bold;
+  font-size: 1.07rem;
+}

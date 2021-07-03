@@ -1,0 +1,83 @@
+.userdashboard-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#userdashboard-data-wrapper-div{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#userdashboard-invite-details-container-div {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  gap: 1.5em;
+}
+
+#userdashboard-family-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#userdashboard-invitee-details-container {
+  display: grid;
+  grid-template-columns: fit-content(300px) fit-content(300px);
+  text-align: initial;
+  column-gap: 1em;
+  flex-grow: 1;
+  flex-basis: 48.8%;
+}
+
+#userdashboard-invitees-num-text {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  font-size: 0.9375rem;
+  font-family: "Muli";
+  color: var(--font-color-secondary);
+}
+
+.userdashboard-date-time-text {
+  display: flex;
+  font-family: "Muli";
+  font-size: 0.798rem;
+  font-weight: bold;
+  align-items: center;
+  color: var(--font-color-secondary);
+}
+
+#userdashboard-invitees-visit-purpose-text {
+  font-size: 0.9375rem;
+  font-family: "Muli";
+  color: var(--font-color-secondary);
+}
+
+#userdashboard-invite-to-text {
+  color: #00e18a;
+  font-family: "Muli";
+  font-size: calc(14px + (23 - 14) * ((100vw - 300px) / (1920 - 300)));
+  font-weight: bold;
+}
+
+#userdashboard-invite-status-div {
+  display: grid;
+  grid-template-columns: 0.745fr fit-content(25px) 1fr;
+  gap: 1em;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+#userdashboard-waiting-icon {
+  display: flex;
+  align-items: center;
+}
+
+#userdashboard-request-status-text {
+  display: flex;
+  align-items: center;
+  font-family: "Muli";
+  font-weight: bold;
+  color: var(--font-color-secondary);
+}

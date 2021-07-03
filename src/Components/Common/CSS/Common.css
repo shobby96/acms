@@ -1,0 +1,197 @@
+:root {
+  --ff-primary: "Mulish";
+  --form-color: hsl(157, 100%, 45%);
+  /* Theme Blue Gradient */
+  --font-color-primary: white;
+  --font-color-secondary: white;
+  --background-color: linear-gradient(
+    to right bottom,
+    hsl(209, 100%, 8%),
+    hsl(234, 100%, 8%)
+  );
+  --navbar-background-color: hsl(209, 100%, 8%);
+  --navbar-avatar-color: rgb(196, 196, 196);
+  --navbar-avatar-color-in-data: rgb(87, 87, 87);
+
+  --footer-background-color: hsl(209, 100%, 8%);
+  --sider-background-color: hsl(209, 100%, 8%);
+  --form-background-color: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.5)
+  );
+  --content-background-color: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 1)
+  );
+  --data-background-color: linear-gradient(
+    to left,
+    rgba(0, 21, 41, 0.2),
+    rgba(0, 21, 41, 1)
+  );
+  --users-card-color: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.07),
+    rgba(0, 0, 0, 0.1)
+  );
+
+  --navbar-avatar-color: rgb(230, 230, 230);
+  --navbar-avatar-color-in-data: rgb(230, 230, 230);
+
+
+  /* Theme Green Gradient */
+  /* --font-color-primary: rgb(5, 0, 54);
+  --font-color-secondary: rgb(230, 230, 230);
+  --background-color: linear-gradient(
+    to right bottom,
+    hsl(157, 100%, 45%),
+    hsl(234, 100%, 8%)
+  );
+
+  --navbar-background-color: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.4)
+  );
+
+  --navbar-avatar-color: rgb(230, 230, 230);
+  --navbar-avatar-color-in-data: rgb(230, 230, 230);
+
+  --footer-background-color: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.4)
+  );
+  --sider-background-color: transparent;
+  --drawer-background-color: linear-gradient(
+    to right bottom,
+    hsl(157, 100%, 45%),
+    hsl(162, 100%, 18%)
+  );
+  --form-background-color: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.5)
+  );
+
+  --content-background-color: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.4)
+  );
+
+  --data-background-color: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.07),
+    rgba(0, 0, 0, 0.1)
+  );
+
+  --users-card-color: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.07),
+    rgba(0, 0, 0, 0.1)
+  ); */
+
+  /* Theme Green */
+/*   
+  --font-color-primary: white;
+  --font-color-secondary: black;
+  --background-color: white;
+
+  --navbar-background-color: hsl(234, 100%, 8%);
+  --footer-background-color: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.4)
+  );
+  --sider-background-color: rgba(255, 255, 255, 0.5);
+  --drawer-background-color: white;
+  --form-background-color: hsl(157, 100%, 45%);
+  --content-background-color: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.4)
+  );
+  --data-background-color: rgba(0, 0, 0, 0.05);
+  --navbar-avatar-color: rgb(196, 196, 196);
+  --navbar-avatar-color-in-data: rgb(87, 87, 87);
+  --users-card-color: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.07),
+    rgba(0, 0, 0, 0.1)
+  ); */
+
+  /*   
+  --background-color: linear-gradient(
+    to right top,
+    hsl(157, 100%, 45%),
+    hsl(182, 100%, 45%)
+  );
+  --form-background-color: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.7)
+  );
+  --background-color-secondary: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.7)
+  );
+  --background-color-sider: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.7)
+  );
+  --button-color-primary: white;
+  --button-color-secondary: rgba(255, 255, 255, 0.09);
+  --data-background-color:  linear-gradient(
+    to left ,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.7)
+  ); */
+}
+
+html {
+  font-size: 16px;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.common-center-text-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff-primary);
+}
+
+.common-primary-button-style {
+  font-family: "Mulish";
+  /* font-size: clamp(0.75rem, 0.9375vw, 1.125rem) !important; */
+  font-size: 1.125rem !important;
+  font-weight: bold !important;
+}
+
+.common-workarea {
+  width: 40%;
+  min-width: 320px;
+  font-size: 16px;
+}
+
+.common-workarea label {
+  color: var(--font-color-primary) !important;
+  font-family: var(--ff-primary);
+  font-weight: bold;
+  /* font-size: clamp(0.75rem, 1vw, 1.125rem) !important; */
+  font-size: 1.125rem !important;
+}
+@media only screen and (max-width: 1100px) {
+  .common-workarea {
+    font-size: 10px !important;
+  }
+}

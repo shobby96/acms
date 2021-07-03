@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@font-face {
+  font-family: "Mulish";
+  src: local("Mulish"),
+    url("./Components/Resources/Fonts/Mulish/mulish-variable.ttf") format("truetype");
+
+}
