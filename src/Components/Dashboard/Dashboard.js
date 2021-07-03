@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Menu, Layout } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
+import { useLocation } from 'react-router-dom'
 
 import NavBar from "../Navbar/Navbar";
 import {
@@ -26,10 +27,19 @@ const Dashboard = (props) => {
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+  const [redirectRoute, updateRedirectRoute] = useState("");
+  const location = useLocation()
+  const menuClickHandler = ({ item, key, keyPath, domEvent }) => {
+    console.log("item: ", item, " key: ", key, key!=redirectRoute, redirectRoute, 'location: ',location.pathname);
+    if (key && key!==location.pathname && isNaN(key)) {
+      console.log('updating Key')
+      updateRedirectRoute(key);
+    }
+  };
 
   const { height, width } = useWindowDimensions();
   console.log("height: ", height, "width: ", width);
-  const [redirectRoute, updateRedirectRoute] = useState("");
+
   if (redirectRoute) {
     return <Redirect push to={redirectRoute} />;
   }
@@ -39,22 +49,27 @@ const Dashboard = (props) => {
     <React.Fragment>
       <Menu.Item
         className="icon"
+        key="/visitors"
         icon={<VisitorIcon style={{ fontSize: fontSize, color: color }} />}
       ></Menu.Item>
       <Menu.Item
         className="icon"
+        key="/users"
         icon={<UserIcon style={{ fontSize: fontSize, color: color }} />}
       ></Menu.Item>
       <Menu.Item
         className="icon"
+        key='1'
         icon={<NotificationIcon style={{ fontSize: fontSize, color: color }} />}
       ></Menu.Item>
       <Menu.Item
         className="icon"
+        key="2"
         icon={<HistoryIcon style={{ fontSize: fontSize, color: color }} />}
       ></Menu.Item>
       <Menu.Item
         className="icon"
+        key="/"
         icon={<LogoutIcon style={{ fontSize: fontSize, color: color }} />}
       ></Menu.Item>
     </React.Fragment>
@@ -64,28 +79,38 @@ const Dashboard = (props) => {
     <React.Fragment>
       <Menu.Item
         className="icon"
+        key="4"
         icon={<DashboardIcon style={{ fontSize: fontSize, color: color }} />}
       ></Menu.Item>
       <Menu.Item
         className="icon"
+        key="5"
         icon={<NotificationIcon style={{ fontSize: fontSize, color: color }} />}
       ></Menu.Item>
       <Menu.Item
         className="icon"
+        key="6"
         icon={<HistoryIcon style={{ fontSize: fontSize, color: color }} />}
       ></Menu.Item>
       <Menu.Item
         className="icon"
+        key="/"
         icon={<LogoutIcon style={{ fontSize: fontSize, color: color }} />}
       ></Menu.Item>
     </React.Fragment>
   );
 
   const menu = (
-    <Menu mode="inline" theme="dark" className="dashboard-menu">
+    <Menu
+      mode="inline"
+      theme="dark"
+      className="dashboard-menu"
+      onSelect={menuClickHandler}
+    >
       {props.isAdmin ? adminSider : userSider}
     </Menu>
   );
+
   return (
     <div className="main">
       <div className="header">

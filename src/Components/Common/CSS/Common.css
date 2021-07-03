@@ -25,6 +25,12 @@
     rgba(255, 255, 255, 0.5),
     rgba(255, 255, 255, 1)
   );
+
+  --drawer-background-color: linear-gradient(
+    to right bottom,
+    hsla(209, 100%, 8%, 0.5),
+    hsla(234, 100%, 8%, 1)
+  );
   --data-background-color: linear-gradient(
     to left,
     rgba(0, 21, 41, 0.2),
@@ -38,7 +44,6 @@
 
   --navbar-avatar-color: rgb(230, 230, 230);
   --navbar-avatar-color-in-data: rgb(230, 230, 230);
-
 
   /* Theme Green Gradient */
   /* --font-color-primary: rgb(5, 0, 54);
@@ -94,7 +99,7 @@
   ); */
 
   /* Theme Green */
-/*   
+  /*   
   --font-color-primary: white;
   --font-color-secondary: black;
   --background-color: white;
