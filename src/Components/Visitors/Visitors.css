@@ -1,6 +1,7 @@
 /* Content section of the dashboard dedicated for Visitors menu */
 #visitors-section-div {
   flex-grow: 1;
+  padding-top: 1em;
 }
 
 /* Style for title of the content section */
@@ -8,6 +9,7 @@
   font-family: "Muli";
   font-weight: bold;
   font-size: 0.9375rem;
+  color: var(--font-color-secondary)
 }
 
 /* Container containing details of Visitor*/

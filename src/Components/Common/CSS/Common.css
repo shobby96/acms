@@ -1,8 +1,8 @@
 :root {
   --ff-primary: "Mulish";
-  --form-color: hsl(157, 100%, 45%);
+
   /* Theme Blue Gradient */
-  --font-color-primary: white;
+  /* --font-color-primary: white;
   --font-color-secondary: white;
   --background-color: linear-gradient(
     to right bottom,
@@ -22,7 +22,7 @@
   );
   --content-background-color: linear-gradient(
     to right bottom,
-    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.3),
     rgba(255, 255, 255, 1)
   );
 
@@ -43,7 +43,7 @@
   );
 
   --navbar-avatar-color: rgb(230, 230, 230);
-  --navbar-avatar-color-in-data: rgb(230, 230, 230);
+  --navbar-avatar-color-in-data: rgb(230, 230, 230); */
 
   /* Theme Green Gradient */
   /* --font-color-primary: rgb(5, 0, 54);
@@ -99,7 +99,7 @@
   ); */
 
   /* Theme Green */
-  /*   
+  /*     
   --font-color-primary: white;
   --font-color-secondary: black;
   --background-color: white;
@@ -155,6 +155,40 @@
     rgba(255, 255, 255, 0.4),
     rgba(255, 255, 255, 0.7)
   ); */
+
+  /* Dark Theme */
+  --background-color-secondary: '#00cc7e';
+  --font-color-primary: white;
+  --font-color-secondary: white;
+  --background-color: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 1)
+  );
+  --navbar-background-color: rgba(225, 225, 225, 0.05);
+  --navbar-avatar-color: rgb(196, 196, 196);
+  --navbar-avatar-color-in-data: rgb(87, 87, 87);
+
+  --footer-background-color: transparent;
+  --sider-background-color: rgba(225, 225, 225, 0.01);
+  --form-background-color: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.1),
+    rgb(0, 112, 204, 0.05)
+  );
+  --content-background-color: transparent;
+
+  --drawer-background-color: rgba(225, 225, 225, 0.05);
+  --data-background-color: rgba(225, 225, 225, 0.05);
+  --users-card-color: rgba(225, 225, 225, 0.05);
+  --navbar-avatar-color: rgb(230, 230, 230);
+  --navbar-avatar-color-in-data: rgb(230, 230, 230);
+
+  --dashboard-widget-background-color: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.1),
+    rgb(0, 112, 204, 0.05)
+  );
 }
 
 html {

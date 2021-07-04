@@ -9,10 +9,10 @@
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   place-items: center;
-  
   background: var(--users-card-color);
   min-width: 400px;
   min-height: 100px;
+  color: var(--font-color-primary);
 }
 
 .user-avatar {

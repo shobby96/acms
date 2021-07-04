@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Button, Menu, Layout } from "antd";
+import ReactApexChart from "react-apexcharts";
+import { Button, Menu, Layout, Card } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
-import { useLocation } from 'react-router-dom'
+import { useLocation } from "react-router-dom";
 
 import NavBar from "../Navbar/Navbar";
 import {
@@ -18,6 +19,9 @@ import "./Dashboard.css";
 import "../Common/CSS/Common.css";
 import "antd/dist/antd.css";
 import { Redirect } from "react-router";
+import PieChart from "./Piechart";
+import RadialBarChart from "./Radialbar";
+import SparkWidget from "./SparkWidget";
 
 const Dashboard = (props) => {
   const onFinish = (values) => {
@@ -28,11 +32,20 @@ const Dashboard = (props) => {
     console.log("Failed:", errorInfo);
   };
   const [redirectRoute, updateRedirectRoute] = useState("");
-  const location = useLocation()
+  const location = useLocation();
   const menuClickHandler = ({ item, key, keyPath, domEvent }) => {
-    console.log("item: ", item, " key: ", key, key!=redirectRoute, redirectRoute, 'location: ',location.pathname);
-    if (key && key!==location.pathname && isNaN(key)) {
-      console.log('updating Key')
+    console.log(
+      "item: ",
+      item,
+      " key: ",
+      key,
+      key != redirectRoute,
+      redirectRoute,
+      "location: ",
+      location.pathname
+    );
+    if (key && key !== location.pathname && isNaN(key)) {
+      console.log("updating Key");
       updateRedirectRoute(key);
     }
   };
@@ -59,7 +72,7 @@ const Dashboard = (props) => {
       ></Menu.Item>
       <Menu.Item
         className="icon"
-        key='1'
+        key="1"
         icon={<NotificationIcon style={{ fontSize: fontSize, color: color }} />}
       ></Menu.Item>
       <Menu.Item
@@ -128,6 +141,21 @@ const Dashboard = (props) => {
         </Layout.Sider>
 
         <div className="main-content">
+          <div id="dashboard-statistics-card-container-div">
+            <Card className="dashboard-statistic-card">
+              <div className="dashboard-statistic-metric-details-div">
+                <div>Sales</div>
+                <div>22</div>
+              </div>
+              <SparkWidget></SparkWidget>
+            </Card>
+            <Card className="dashboard-statistic-card">
+              <RadialBarChart />
+            </Card>
+            <Card className="dashboard-statistic-card">
+              <PieChart />
+            </Card>
+          </div>
           <div id="top-bar">
             top bar
             <div className="dashboard-header">
