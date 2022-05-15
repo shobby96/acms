@@ -5,8 +5,14 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 8fr;
+  grid-template-columns: 4fr 4fr;
   grid-column-gap: 1em;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -14,37 +20,86 @@
   padding: 0 !important;
 }
 
-.navbar-drawer .ant-drawer-content{
+.navbar-drawer .ant-drawer-content {
   background: transparent;
 }
 
 .navbar-menu-icon {
+  color: var(--primary-green);
+  font-size: 1.5rem;
 }
 
 .navbar-home-icon {
+  color: var(--primary-green);
+  font-size: 1.5rem;
 }
 
 .navbar-menu-button {
-  /* background-color: #1890ff !important; */
+  background-color: transparent !important;
+  border: 0;
 }
 
-.navbar-avatar-with-name {
+.navbar-home-button {
+  background-color: transparent !important;
+  border: 0;
+}
+.navbar-avatar-popover {
   display: flex;
   align-items: center;
   justify-self: end;
   grid-column: 3 / 4;
-  
+}
+.navbar-avatar-popover-overlay .ant-popover-title {
+  font-family: var(--ff-primary) !important;
+  color: var(--font-color-primary) !important;
 }
 .navbar-avatar-username {
   padding-left: 0.5em;
-  font-family: "Muli";
-  color: var(--navbar-avatar-color);
+  font-family: var(--ff-primary);
+  color: var(--font-color-primary);
   font-weight: 800;
   font-size: 0.9375rem;
 }
-.navbar-avatar{
+.navbar-avatar {
   width: 30px;
   height: 30px;
+}
+
+.navbar-avatar-popover-overlay {
+  background-color: var(--navbar-popover-color);
+  border-radius: 1rem;
+}
+.navbar-avatar-popover-overlay .ant-popover-inner {
+  background-color: transparent;
+}
+.navbar-popover-buttons-container {
+  display: flex;
+  flex-direction: column;
+}
+.navbar-organization-button {
+  font-family: var(--ff-primary);
+  color: var(--font-color-primary);
+  background-color: transparent;
+  border: transparent;
+}
+.navbar-signout-button {
+  font-family: var(--ff-primary);
+  color: var(--font-color-primary);
+  background-color: transparent;
+  border: transparent;
+}
+
+.navbar-profile-button {
+  font-family: var(--ff-primary);
+  color: var(--font-color-primary);
+  background-color: transparent;
+  border: transparent;
+}
+
+.navbar-button:hover {
+  background: hsl(157, 100%, 40%) !important;
+  color: var(--font-color-secondary);
+  border-radius: 0.1rem;
 }
 
 @media (min-width: 992px) {

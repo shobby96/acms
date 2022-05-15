@@ -1,0 +1,164 @@
+/* Screen format */
+
+.add-organization-content {
+  display: grid;
+  place-items: center;
+  --add-organization-margin-reference-unit: 16;
+  width: 100%;
+  height: 100%;
+}
+
+.add-organization-workarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46.875%;
+  min-width: 320px;
+  font-size: 16px;
+}
+
+/* Request form specifications */
+#add-organization-form {
+  background: var(--form-background-color);
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.add-organization-form-item {
+  width: 80%;
+  margin-bottom: 0px !important;
+}
+
+.add-organization-form-item-spacing {
+  margin-top: calc(
+    (1.875 * var(--add-organization-margin-reference-unit)) * 1px
+  ) !important;
+}
+
+/* Style for title of request form */
+#add-organization-form-title-text {
+  color: var(--font-color-primary);
+  font-family: var(--ff-primary);
+  font-weight: bold;
+  font-size: 2.625rem;
+  margin-top: calc((3.1 * var(--add-organization-margin-reference-unit)) * 1px);
+}
+
+/* Style for input fields of the form */
+.add-organization-form-item .add-organization-input {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  border: 0px !important;
+  border-radius: 9px;
+  color: var(--font-color-primary);
+}
+
+.add-organization-input input {
+  background-color: transparent;
+}
+
+/* Style of labels of input fields */
+.add-organization-workarea label {
+  color: var(--font-color-primary) !important;
+  font-family: var(--ff-primary);
+  font-weight: bold;
+  font-size: 1.125rem !important;
+}
+
+.add-organization-name-form-item {
+  margin-top: calc(
+    (2.938 * var(--add-organization-margin-reference-unit)) * 1px
+  ) !important;
+}
+#add-organization-button-div {
+  width: 100%;
+  font-size: 16px;
+  margin-top: calc(
+    (2.938 * var(--add-organization-margin-reference-unit)) * 1px
+  ) !important;
+  margin-bottom: calc(
+    (3.725 * var(--add-organization-margin-reference-unit)) * 1px
+  ) !important;
+}
+
+#add-organization-button {
+  background-color: #ffffff;
+  color: #3e3e3e;
+  font-family: var(--ff-primary);
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-radius: 25px;
+  height: auto;
+}
+
+@media screen and (max-width: 1100px) {
+  html {
+    font-size: 12px;
+  }
+  .workarea {
+    font-size: 10px !important;
+  }
+
+  #add-organization-button-div {
+    font-size: 10px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width: 1200px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+
+@media screen and (max-width: 992px) {
+  html {
+    font-size: 14px;
+  }
+
+  .add-organization-workarea {
+    width: 60%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media screen and (max-width: 576px) {
+  html {
+    /* font-size: 10px; */
+  }
+
+  .add-organization-workarea {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    /* font-size: 8px !important; */
+  }
+}
+
+@media screen and (max-height: 740px) {
+  .add-organization-content {
+    --add-organization-margin-reference-unit: 8;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .add-organization-content {
+    --add-organization-margin-reference-unit: 6;
+  }
+}

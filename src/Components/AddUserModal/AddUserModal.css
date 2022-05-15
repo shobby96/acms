@@ -2,8 +2,12 @@
   width: 46.87% !important;
 }
 
+.add-user-modal .ant-modal-content{
+  border-radius: 2em;
+}
+
 .add-user-modal > .ant-modal-content {
-  background-color: #00E38C
+  background-color: grey;
 }
 
 #add-user-form {
@@ -24,34 +28,35 @@
   border-radius: 9px;
 }
 
-
-#email-input{
-    background: transparent;
-    background-color: rgba(255, 255, 255, 0.09) !important;
-    border: 2px;
+#email-input {
+  background: transparent;
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  border: 2px;
 }
 .user-email-input label {
-  font-family: "Muli";
+  font-family: var(--ff-primary);
   font-weight: bold;
-  font-size: 18px;
-  color: white;
+  font-size: var(--form-label-font-size);
+  color: var(--font-color-primary);
 }
 
 #add-user-modal-header-text {
-  font-family: "Muli";
-  font-weight: "bolder";
-  font-size: 42px;
-  color: white;
+  font-family: var(--ff-primary);
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--font-color-primary);
 }
 
 #add-user-button {
-  font-family: "Muli";
+  font-family: var(--ff-primary);
   font-weight: bold;
-  color: black;
-  margin-top: 38px;
+  color: var(--font-color-primary);
+  margin-top: 2.5rem;
+  background: transparent;
+  border: 1px solid var(--font-color-primary);
 }
 
 #add-user-instructions-text {
-  font-family: "Muli";
-  color: white;
+  font-family: var(--ff-primary);
+  color: var(--font-color-primary);
 }

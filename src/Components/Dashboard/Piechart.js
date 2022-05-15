@@ -1,6 +1,8 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
+
 import "./Piechart.css";
+
 class PieChart extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +27,7 @@ class PieChart extends React.Component {
           type: "gradient",
         },
         legend: false,
-        
+
         responsive: [
           {
             breakpoint: 480,
@@ -50,7 +52,6 @@ class PieChart extends React.Component {
           options={this.state.options}
           series={this.state.series}
           type="donut"
-          
         />
       </div>
     );

@@ -34,12 +34,11 @@ input {
   margin-top: 1.875em !important;
 }
 
-
 /* Login form header style */
 #signup-form-title-text {
   font-family: var(--ff-primary);
-  font-weight: 400;
-  font-size: clamp(1.5rem, 5vw, 2.625rem);
+  font-weight: var(--t3-font-weight);
+  font-size: 1.5rem;
   margin-top: 1rem;
   color: var(--font-color-primary);
 }

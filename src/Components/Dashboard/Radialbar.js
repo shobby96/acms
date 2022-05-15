@@ -1,11 +1,22 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
+import { connect } from "react-redux";
+
+import { getRequestsStatusWidgetData } from "../../Actions/RequestActions";
+
 import "./Piechart.css";
 
 class RadialBarChart extends React.Component {
-  componentDidUpdate(prevProps) {}
-  constructor(props) {
-    super(props);
+  componentDidMount() {
+    let { profileState } = this.props;
+    let refreshToken = profileState["refresh_token"];
+    let accessToken = profileState["access_token"];
+    let headers = {
+      accessToken: accessToken,
+      refreshToken: refreshToken,
+    };
+    let url = `http://localhost:3050/requests/requestStatusStats`;
+    this.props.onGetRequestsStatusWidgetData(url, headers);
   }
 
   getOptions = () => {
@@ -45,12 +56,19 @@ class RadialBarChart extends React.Component {
 
           dataLabels: {
             show: true,
+            total: {
+              show: true,
+              label: "Total",
+              formatter: function (w) {
+                // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
+                return 25;
+              },
+            },
             name: {
               offsetY: -10,
               show: true,
               color: "#fff",
               fontSize: "20px",
-              
             },
             value: {
               formatter: function (val) {
@@ -79,13 +97,18 @@ class RadialBarChart extends React.Component {
       stroke: {
         lineCap: "round",
       },
-      labels: ["Pending "],
+      labels: ["Pending", "Accepted", "Rejected"],
     };
     return options;
   };
 
   getSeries = () => {
-    let series = [80];
+    let series = [];
+    if (Object.keys(this.props.requestsStatusWidgetData).length) {
+      let { pendingDocsCount, acceptedDocsCount, rejectedDocsCount } =
+        this.props.requestsStatusWidgetData;
+      series = [pendingDocsCount, acceptedDocsCount, rejectedDocsCount];
+    }
     return series;
   };
 
@@ -103,4 +126,15 @@ class RadialBarChart extends React.Component {
   }
 }
 
-export default RadialBarChart;
+const mapActionsToProps = {
+  onGetRequestsStatusWidgetData: getRequestsStatusWidgetData,
+};
+
+const mapStateToProps = (state) => {
+  return {
+    requestsStatusWidgetData: state.requests.requestsStatusWidgetData,
+    profileState: state.signIn.profileState,
+  };
+};
+
+export default connect(mapStateToProps, mapActionsToProps)(RadialBarChart);

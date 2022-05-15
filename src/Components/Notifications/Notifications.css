@@ -1,0 +1,34 @@
+.ant-dropdown-link {
+  width: 10% !important;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.notifications-bell-icon {
+  font-size: 1.5rem !important;
+  color: var(--primary-green);
+}
+
+.notifications-menu {
+  height: 20rem;
+  background: transparent;
+}
+
+.notifications-infinite-scroll-wrapper {
+  background: var(--notifications-background-color);
+  border-radius: 2rem;
+  overflow: auto;
+  border: 1px solid var(--font-color-hover-green);
+}
+.ant-dropdown {
+  width: 30rem;
+}
+
+.notifications-menu-item a:hover {
+  color: var(--primary-green);
+}
+
+.notifications-menu-item a {
+  color: var(--font-color-primary);
+  font-family: var(--ff-primary);
+}

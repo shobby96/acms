@@ -1,44 +1,44 @@
-.cancellation-modal{
-    width: 46.87% !important; 
-  }
-  
-  #cancel-request-form {
-    display: grid;
-    place-items: center;
-  }
-  
-  .cancel-request-form-item {
-    width: 80%;
-    margin-bottom: 0px !important;
-    font-size: 16px !important;
-  }
-  
-  .cancellation-reason-input {
-    margin-top: 82px;
-  }
-  
-  .cancellation-reason-input label {
-    font-family: 'Muli';
-    font-weight: bold;
-    font-size: 18px;
-  }
-  
-  #cancellation-modal-header-text {
-    font-family: "Muli";
-    font-weight: "bolder";
-    font-size: 42px;
-  }
-  
-  #reason-text {
-    font-family: "Muli";
-    font-weight: bold;
-    font-size: 18px;
-  }
-  
-  #submit-reason-button {
-    font-family: "Muli";
-    font-weight: bold;
-    background-color: #00e38c;
-    color: white;
-    margin-top: 38px;
-  }
+.cancellation-modal {
+  width: 46.87% !important;
+}
+
+#cancel-request-form {
+  display: grid;
+  place-items: center;
+}
+
+.cancel-request-form-item {
+  width: 80%;
+  margin-bottom: 0px !important;
+  font-size: 16px !important;
+}
+
+.cancellation-reason-input {
+  margin-top: 82px;
+}
+
+.cancellation-reason-input label {
+  font-family: var(--ff-primary);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#cancellation-modal-header-text {
+  font-family: var(--ff-primary);
+  font-weight: "bolder";
+  font-size: 42px;
+}
+
+#reason-text {
+  font-family: var(--ff-primary);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#submit-reason-button {
+  font-family: var(--ff-primary);
+  font-weight: bold;
+  background-color: #00e38c;
+  color: white;
+  margin-top: 38px;
+}

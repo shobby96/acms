@@ -1,89 +1,110 @@
-import React, { useState } from "react";
-import ReactApexChart from "react-apexcharts";
-import { Button, Menu, Layout, Card } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
+import React, { useState, useEffect, useMemo } from "react";
 import { useLocation } from "react-router-dom";
+import { Redirect } from "react-router";
+import { Menu, Layout, Card } from "antd";
+import { useSelector } from "react-redux";
+import {
+  IdcardOutlined,
+  UserOutlined,
+  NotificationOutlined,
+  HistoryOutlined,
+  LogoutOutlined,
+} from "@ant-design/icons";
 
 import NavBar from "../Navbar/Navbar";
+import RadialBarChart from "./Radialbar";
+import SparkWidget from "./SparkWidget";
+import AddUserModal from "../AddUserModal/AddUserModal";
+import Visitors from "../Visitors/Visitors";
+import Users from "../Users/Users";
+import { subscribeUser } from "../../subscription";
 import {
   DashboardIcon,
   HistoryIcon,
   LogoutIcon,
   NotificationIcon,
-  UserIcon,
-  VisitorIcon,
 } from "./Icons";
-import useWindowDimensions from "./WindowDimensionsHook";
 
 import "./Dashboard.css";
 import "../Common/CSS/Common.css";
 import "antd/dist/antd.css";
-import { Redirect } from "react-router";
-import PieChart from "./Piechart";
-import RadialBarChart from "./Radialbar";
-import SparkWidget from "./SparkWidget";
 
 const Dashboard = (props) => {
-  const onFinish = (values) => {
-    console.log("Success:", values);
-  };
+  const { profileState } = useSelector((state) => ({
+    profileState: state.signIn.profileState,
+  }));
 
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
-  };
-  const [redirectRoute, updateRedirectRoute] = useState("");
+  useEffect(() => {
+    subscribeUser(profileState.profile._id);
+
+    return () => console.log("Unmounting");
+  }, [JSON.stringify(profileState.profile), props]);
   const location = useLocation();
+
+  const getContentComponent = () => {
+    switch (location.pathname) {
+      case "/visitors":
+        return <Visitors />;
+      case "/users":
+        return <Users />;
+      default:
+        break;
+    }
+  };
+  const contentComponent = useMemo(() => {
+    return getContentComponent();
+  }, [location.pathname]);
+
+  const [redirectRoute, updateRedirectRoute] = useState("");
+  const [addUserModalVisibility, updateAddUserModalVisibility] =
+    useState(false);
+
   const menuClickHandler = ({ item, key, keyPath, domEvent }) => {
-    console.log(
-      "item: ",
-      item,
-      " key: ",
-      key,
-      key != redirectRoute,
-      redirectRoute,
-      "location: ",
-      location.pathname
-    );
     if (key && key !== location.pathname && isNaN(key)) {
-      console.log("updating Key");
       updateRedirectRoute(key);
     }
   };
 
-  const { height, width } = useWindowDimensions();
-  console.log("height: ", height, "width: ", width);
-
   if (redirectRoute) {
     return <Redirect push to={redirectRoute} />;
   }
-  const fontSize = "calc(70px + (100 - 70) * ((100vw - 300px) / (1600 - 300)))";
+
+  if (!Object.keys(profileState.profile).length) {
+    return <Redirect to={"/"}></Redirect>;
+  }
+  // const fontSize = "calc(70px + (80 - 70) * ((100vw - 300px) / (1600 - 300)))";
+  const fontSize = "30px";
   const color = "white";
   const adminSider = (
     <React.Fragment>
       <Menu.Item
         className="icon"
         key="/visitors"
-        icon={<VisitorIcon style={{ fontSize: fontSize, color: color }} />}
-      ></Menu.Item>
+        icon={<IdcardOutlined style={{ fontSize: fontSize, color: color }} />}
+      >
+        {" "}
+      </Menu.Item>
       <Menu.Item
         className="icon"
         key="/users"
-        icon={<UserIcon style={{ fontSize: fontSize, color: color }} />}
+        icon={<UserOutlined style={{ fontSize: fontSize, color: color }} />}
       ></Menu.Item>
       <Menu.Item
         className="icon"
         key="1"
-        icon={<NotificationIcon style={{ fontSize: fontSize, color: color }} />}
+        icon={
+          <NotificationOutlined style={{ fontSize: fontSize, color: color }} />
+        }
       ></Menu.Item>
       <Menu.Item
         className="icon"
         key="2"
-        icon={<HistoryIcon style={{ fontSize: fontSize, color: color }} />}
+        icon={<HistoryOutlined style={{ fontSize: fontSize, color: color }} />}
       ></Menu.Item>
       <Menu.Item
         className="icon"
         key="/"
-        icon={<LogoutIcon style={{ fontSize: fontSize, color: color }} />}
+        icon={<LogoutOutlined style={{ fontSize: fontSize, color: color }} />}
       ></Menu.Item>
     </React.Fragment>
   );
@@ -113,31 +134,34 @@ const Dashboard = (props) => {
     </React.Fragment>
   );
 
-  const menu = (
-    <Menu
-      mode="inline"
-      theme="dark"
-      className="dashboard-menu"
-      onSelect={menuClickHandler}
-    >
-      {props.isAdmin ? adminSider : userSider}
-    </Menu>
-  );
+  const menu = () => {
+    return (
+      <Menu
+        mode="inline"
+        theme="dark"
+        className="dashboard-menu"
+        onSelect={menuClickHandler}
+      >
+        {/* {props.isAdmin ? adminSider : userSider} */}
+        {adminSider}
+      </Menu>
+    );
+  };
 
   return (
     <div className="main">
       <div className="header">
-        <NavBar menu={menu} />
+        <NavBar menu={menu} props={props} />
       </div>
       <div className="dashboard-content">
         <Layout.Sider
           className="dashboard-sidebar"
           breakpoint={"lg"}
-          theme="dark"
+          // theme="dark"
           collapsedWidth={0}
           trigger={null}
         >
-          {menu}
+          {menu()}
         </Layout.Sider>
 
         <div className="main-content">
@@ -152,35 +176,19 @@ const Dashboard = (props) => {
             <Card className="dashboard-statistic-card">
               <RadialBarChart />
             </Card>
-            <Card className="dashboard-statistic-card">
+            {/* <Card className="dashboard-statistic-card">
               <PieChart />
-            </Card>
+            </Card> */}
           </div>
-          <div id="top-bar">
-            top bar
-            <div className="dashboard-header">
-              <div className="dashboard-header-left dashboard-col">
-                {props.menu}
-              </div>
-              <div className="dashboard-header-right dashboard-col">
-                <Button
-                  id="add-button"
-                  icon={<PlusOutlined />}
-                  onClick={() => updateRedirectRoute("/request")}
-                >
-                  Add
-                </Button>
-              </div>
-            </div>
-            <div className="welcome-back-text">
-              Welcome Back, {"Shahbakht Anwar"}
-            </div>
-          </div>
-          {props.content}
+          {contentComponent}
         </div>
       </div>
+      <AddUserModal
+        visibility={addUserModalVisibility}
+        updateVisibility={updateAddUserModalVisibility}
+      />
 
-      <div className="footer">footer</div>
+      {/* <div className="footer">footer</div> */}
     </div>
   );
 };

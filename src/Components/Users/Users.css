@@ -10,9 +10,11 @@
   grid-template-columns: 1fr 5fr 1fr;
   place-items: center;
   background: var(--users-card-color);
+  border-radius: 1em;
   min-width: 400px;
   min-height: 100px;
   color: var(--font-color-primary);
+  padding: 0 0.5em;
 }
 
 .user-avatar {
@@ -21,7 +23,13 @@
 }
 
 .user-info {
-  font-family: "Muli";
+  font-family: var(--ff-primary);
+  width: 100%;
+  display: flex;
+  word-break: break-all;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .user-actions {
@@ -31,9 +39,11 @@
 }
 
 .delete-button {
-  border: 0px;
+  border: 1px solid black;
+  background: transparent;
 }
 
 .edit-button {
-  border: 0px;
+  border: 1px solid black;
+  background: transparent;
 }

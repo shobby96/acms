@@ -9,12 +9,15 @@
 }
 .main-content {
   /* background-color: palegoldenrod; */
+  /* background-color: #BDBDBD !important; */
   display: flex;
   flex-direction: column;
   padding-left: 3.1995%;
   padding-right: 3.1995%;
-  padding-top: 89px;
+  padding-top: 2rem;
   background: var(--content-background-color);
+  overflow: auto;
+  max-height: 89vh;
   /* background: transparent; */
 }
 
@@ -27,7 +30,6 @@
 
 .dashboard-statistic-card {
   background: var(--dashboard-widget-background-color);
-  
   color: var(--font-color-primary);
   border: 0;
   flex-basis: 25%;
@@ -49,12 +51,14 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  font-family: "Muli";
+  font-family: var(--ff-primary);
   font-weight: bold;
   font-size: 1.5rem;
   padding-left: 0.5em;
   color: var(--font-color-primary);
 }
+
+/* dashboard sider menu */
 .dashboard-menu {
   /* background-color: palevioletred; */
   display: flex;
@@ -62,7 +66,18 @@
   align-items: center;
   height: 100%;
   /* background: var(--form-background-color) !important; */
-  background: var(--sider-background-color) !important;
+  background: var(--sider-menu-background-color) !important;
+  padding: 0 1em !important;
+}
+
+.dashboard-menu .ant-menu-item {
+  
+  
+}
+
+
+.ant-drawer-body .dashboard-menu {
+  background: var(--drawer-background-color) !important;
 }
 
 .dashboard-sidebar.ant-layout-sider {
@@ -70,15 +85,9 @@
   max-width: 10.2% !important;
   min-width: 180px !important;
   width: initial !important;
-  /* background: var(--background-color); */
   background: var(--sider-background-color) !important;
   border-right: 1px solid var(--navbar-background-color);
 }
-
-.ant-drawer-body .dashboard-menu {
-  background: var(--drawer-background-color) !important;
-}
-
 .dashboard-sidebar.ant-layout-sider-zero-width {
   flex: 0 0 0px !important;
   max-width: 0px !important;
@@ -106,7 +115,7 @@
 }
 
 .dashboard-header-left {
-  font-family: "Muli";
+  font-family: var(--ff-primary);
   font-weight: bold;
   font-size: 2.39rem;
   flex-grow: 10 !important;
@@ -125,7 +134,7 @@
 }
 
 .welcome-back-text {
-  font-family: "Muli";
+  font-family: var(--ff-primary);
   font-size: 0.9375rem;
   color: var(--font-color-primary);
 }
@@ -138,7 +147,7 @@
   height: 100% !important;
   justify-content: center;
   align-items: center;
-  border-radius: 6%;
+  border-radius: 1em;
 }
 
 .icon .ant-menu-title-content {

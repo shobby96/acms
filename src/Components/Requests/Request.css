@@ -3,14 +3,14 @@
 .request-content {
   display: grid;
   place-items: center;
-  --request-margin-reference-unit: 16;
+  --request-margin-reference-unit: 5;
 }
 
 .request-workarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 46.875%;
+  width: 40.875%;
   min-width: 320px;
   font-size: 16px;
 }
@@ -26,6 +26,7 @@
   align-items: center;
   width: 100%;
   overflow: hidden;
+  border: 1px solid black;
 }
 
 .request-form-item {
@@ -34,16 +35,18 @@
 }
 
 .request-form-item-spacing {
-  margin-top: calc((1.875 * var(--request-margin-reference-unit)) * 1px) !important;
+  margin-top: calc(
+    (1.875 * var(--request-margin-reference-unit)) * 1px
+  ) !important;
 }
 
 /* Style for title of request form */
 #request-form-title-text {
   color: var(--font-color-primary);
-  font-family: "Muli";
+  font-family: var(--ff-primary);
   font-weight: bold;
-  font-size: 2.625rem;
-  margin-top: calc((3.1 * var(--request-margin-reference-unit)) * 1px) 
+  font-size: 1.625rem;
+  margin-top: calc((3.1 * var(--request-margin-reference-unit)) * 1px);
 }
 
 /* Style for input fields of the form */
@@ -61,26 +64,31 @@
   color: var(--font-color-primary) !important;
   font-family: var(--ff-primary);
   font-weight: bold;
-  font-size: 1.125rem !important;
+  font-size: var(--form-label-font-size) !important;
 }
 
 /* Style for select field in the form */
 .request-select .ant-select-selector {
   background: transparent;
   background-color: rgba(255, 255, 255, 0.09) !important;
-  font-family: "Muli";
-  color: white;
+  font-family: var(--ff-primary);
+  color: var(--font-color-primary);
   border: 0px !important;
   border-radius: 9px !important;
 }
 
 .request-invitee-type-formitem {
-  margin-top: calc((3.181 * var(--request-margin-reference-unit)) * 1px) !important;
+  margin-top: calc(
+    (3.181 * var(--request-margin-reference-unit)) * 1px
+  ) !important;
 }
-
+.request-purpose-input {
+  font-family: var(--ff-primary);
+  color: var(--font-color-primary);
+}
 .request-purpose-input::placeholder {
-  color: white;
-  font-family: "Muli";
+  color: rgba(66, 63, 63, 0.486);
+  font-family: var(--ff-primary);
 }
 
 .request-date-input {
@@ -88,23 +96,29 @@
 }
 
 .request-date-input input::placeholder {
-  color: white;
-  font-family: "Muli";
+  color: rgba(66, 63, 63, 0.486);
+  font-family: var(--ff-primary);
 }
 
 #request-button-div {
   width: 100%;
-  font-size: 16px;
-  margin-top: calc((2.938 * var(--request-margin-reference-unit)) * 1px) !important;
-  margin-bottom: calc((3.725 * var(--request-margin-reference-unit)) * 1px) !important;
+  font-size: 1.07rem;
+  font-weight: var(--button-font-weight);
+  margin-top: calc(
+    (2.938 * var(--request-margin-reference-unit)) * 1px
+  ) !important;
+  margin-bottom: calc(
+    (3.725 * var(--request-margin-reference-unit)) * 1px
+  ) !important;
 }
 
 #request-button {
-  background-color: #ffffff;
-  color: #3e3e3e;
-  font-family: "Mulish";
-  font-size: 1.25rem;
-  font-weight: bold;
+  background-color: transparent;
+  color: var(--font-color-primary);
+  font-family: var(--ff-primary);
+  border: 1px solid black;
+  font-size: 1.07rem;
+  font-weight: var(--button-font-weight);
   border-radius: 25px;
   height: auto;
 }
@@ -122,25 +136,20 @@
   }
 }
 
-
 /* Extra large devices (large desktops, 1200px and up) */
 @media screen and (max-width: 1200px) {
-
-
 }
-
 
 /* Large devices (desktops, 992px and up) */
 
 @media screen and (max-width: 992px) {
-  html{
-    font-size: 14px
+  html {
+    font-size: 14px;
   }
 
-  .request-workarea{
+  .request-workarea {
     width: 60%;
   }
-
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -149,7 +158,6 @@
   html {
     font-size: 12px;
   }
-
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -159,7 +167,7 @@
     /* font-size: 10px; */
   }
 
-  .request-workarea{
+  .request-workarea {
     width: 90%;
   }
 }
@@ -170,16 +178,14 @@
   }
 }
 
-
-
 @media screen and (max-height: 740px) {
-  .request-content{
+  .request-content {
     --request-margin-reference-unit: 8;
   }
 }
 
 @media screen and (max-height: 600px) {
-  .request-content{
+  .request-content {
     --request-margin-reference-unit: 6;
   }
 }

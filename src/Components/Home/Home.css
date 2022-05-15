@@ -1,0 +1,330 @@
+* {
+  box-sizing: border-box;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(3);
+    /* background-color: red; */
+    border-radius: 100%;
+  }
+  75% {
+    transform: scale(1);
+    /* background-color: orange; */
+  }
+  100% {
+    transform: scale(1.25);
+    /* transform: scale(1.5); */
+    /* background-color: yellow; */
+  }
+}
+
+.animate-project-name {
+  /* background-color: red; */
+  animation-name: stretch;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: normal;
+  animation-iteration-count: 2;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+.project-title-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project-main-title {
+  color: white;
+  font-size: 8rem;
+  font-weight: bolder;
+}
+
+body {
+  overflow: overlay;
+}
+body::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(102, 0, 102);
+  outline: 1px solid transparent;
+}
+
+.home-anchor .ant-anchor.fixed {
+  display: flex !important;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgb(46, 4, 85);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.home-navigation-link-font .ant-anchor-link-title {
+  color: white !important;
+}
+
+/* Container needed to position the overlay. Adjust the width as needed */
+.container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* max-width: 300px; */
+}
+
+/* Make the image to responsive */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  /* background: rgb(0, 0, 0); */
+  /* background: rgba(0, 0, 0, 0.5); */
+  color: #f1f1f1;
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 1;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.overlay-tint {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.whatsection-container {
+  display: flex;
+  background: rgb(46, 4, 85);
+}
+
+.whatsection-details {
+  flex: 1 0 45%;
+}
+.whatsection-image {
+  height: 90vh;
+}
+
+.whatsection-image {
+}
+
+.teamsection-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(46, 4, 85);
+}
+
+.team-header-text {
+  margin-left: auto;
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: 3rem;
+  color: white;
+}
+
+.team-cards-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 8rem;
+}
+
+.team-card {
+  flex: 0 0 20%;
+  background: rgba(255, 255, 255, 0.192);
+}
+
+.team-card-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-card-name {
+  font-weight: bold;
+  color: white;
+}
+
+.team-card-position {
+  color: gray;
+}
+.team-card-divider {
+  width: 50%;
+  border: 1px solid black;
+}
+
+.team-card-avatar {
+  width: 98px !important;
+  height: 98px !important;
+  margin-top: -4rem;
+  background: rgba(255, 238, 0, 0.808);
+}
+
+.team-card-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.roadmapsection-container {
+  display: flex;
+  background: rgb(46, 4, 85);
+  /* overflow: hidden; */
+  /* position: relative; */
+}
+
+.roadmap-left-section {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* height: 800px; */
+}
+.roadmap-right-section {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roadmap-right-section-img {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  width: 70%;
+  height: 70%;
+}
+.roadmap-header-text {
+  color: white;
+  font-size: 3rem;
+  font-weight: 900;
+}
+.roadmap-card-divider {
+  background: linear-gradient(to bottom, yellow, rgba(255, 255, 255, 0.5));
+  width: 55%;
+  height: 0.2rem;
+}
+
+.roadmap-card {
+  display: flex;
+  background: rgba(0, 0, 0, 0.308);
+}
+
+.roadmap-card-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.roadmap-card-right {
+  font-family: sans-serif;
+  color: rgba(255, 255, 255, 0.568);
+  font-size: 3rem;
+}
+.roadmap-card-circle {
+  border-radius: 100%;
+  width: 2rem;
+  height: 2rem;
+  background: yellow;
+}
+
+.roadmap-card-line {
+  margin-top: 1rem;
+  width: 0.5rem;
+  height: 100%;
+  background: linear-gradient(to bottom, yellow, rgba(255, 255, 255, 0.5));
+}
+
+.roadmap-card-step-title {
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.roadmap-card-step-details {
+  color: white;
+}
+
+.carousel-section-container {
+  background: rgb(46, 4, 85);
+  width: 100%;
+}
+
+.carousel {
+  overflow: auto;
+  white-space: nowrap;
+  height: 100%;
+}
+.carousel-image {
+  height: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  /* background: rgba(255, 255, 0, 0.815); */
+  width: 100%;
+  /* height: 15rem; */
+}
+
+.footer-left {
+  height: 100%;
+  flex: 0 0 25%;
+}
+.footer-left-logos-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.footer-right {
+  height: 100%;
+  flex: 0 0 25%;
+}
+.footer-right-logos-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+.footer-akari-logo {
+  color: black;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.footer-discord-logo,
+.footer-twitter-logo {
+  font-size: 3rem !important;
+}
+
+.section-divider {
+  height: 0.25rem;
+  width: 100%;
+  background: rgba(241, 241, 2, 0.829);
+}

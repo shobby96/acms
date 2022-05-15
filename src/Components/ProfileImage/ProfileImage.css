@@ -1,0 +1,34 @@
+.profile-image-thumbnail {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 10em;
+  height: 10em;
+  z-index: 1000;
+}
+
+.organizationImage-upload {
+  margin-top: -3rem;
+  width: 100%;
+
+}
+
+.profileImage-upload {
+  margin-top: -5rem;
+  width: 100% !important;
+}
+
+.organizationImage-upload .ant-upload-select-picture-card {
+  background: transparent;
+  border: 0px;
+}
+
+.profileImage-upload .ant-upload-select-picture-card {
+  background: transparent;
+  border: 0px;
+}
+
+.profile-header-grid-item .profile-image-thumbnail {
+  /* width: auto !important; */
+}
